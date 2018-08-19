@@ -123,6 +123,7 @@ app.layout = html.Div([
                             },
                         ],
                         'layout': {
+                            'height': 700,
                             'title': 'ENI Distribution: Geospatial Analysis<br>Color = Economic Need Index (ENI). Size = School Estimated Income.</br>',
                             "autosize" : True,
                             "hovermode": "closest",
@@ -141,7 +142,8 @@ app.layout = html.Div([
                         }
                     }
                 )
-                ], className= 'seven columns'
+                ], className= 'seven columns',
+                    style={'display': 'inline-block', 'width': '49%'}
                 ),
             html.Div([
                 dcc.Graph(
@@ -161,6 +163,7 @@ app.layout = html.Div([
                              }}
                         ],
                         'layout': {
+                            'height': 650,
                             'title': 'Top 5 NY Cities with the Most Schools<br>Annotation = Economic Need Index (ENI).</br>',
                             'margin':{
                                 'l' : 75,
@@ -206,7 +209,8 @@ app.layout = html.Div([
                             }
                         }
                 )
-                ], className= 'five columns'
+                ], className= 'five columns',
+        style={'display': 'inline-block', 'width': '49%'}
                 )
             ], className="row"),
         html.Div([
@@ -239,7 +243,8 @@ app.layout = html.Div([
                 dcc.Graph(
                     id='race-map-2',
                 )
-                ], className= 'seven columns'
+                ], className= 'seven columns',
+                    style={'display': 'inline-block', 'width': '50%'}
                 )
             ], className="row"),
         html.Div([
@@ -253,6 +258,7 @@ app.layout = html.Div([
                             y = df.columns[::-1])
                         ],
                         'layout': {
+                            'height': 600,
                             'title':'Correlation Heatmap of All Studied Variables',
                             'tickfont':{
                                 'size':7
@@ -260,7 +266,8 @@ app.layout = html.Div([
                         }
                     }
                 )
-                ], className= 'six columns'
+                ], className= 'six columns',
+                style={'display': 'inline-block', 'width': '49%'}
                 ),
 
                 html.Div([
@@ -284,6 +291,7 @@ app.layout = html.Div([
                                 'color': nf['School Income Estimate'],
                             },
         )], 'layout': go.Layout(
+        height=650,
         title= "Economic Need Index vs. Average Grades.<br>Color = School Income Estimate.",
         xaxis={'title': 'Economic Need Index'},
         yaxis={'title': 'Average Grades (GPA)'},
@@ -308,6 +316,7 @@ app.layout = html.Div([
 
     ],
     'layout': {
+        'height': 600,
         'title':'Economic Need Index vs Chronic Absences',
         'xaxis': {'title': 'Economic Need Index (ENI)'},
         'yaxis': {'title': "Chronic Absence Percentage"},
@@ -349,6 +358,7 @@ app.layout = html.Div([
     ],
     'layout': {
         'title':'Distribution of Race vs. Chronic Absence',
+        'height': 600,
         'xaxis': {'title': 'Percent Race'},
         'yaxis': {'title': "Chronic Absences"}
     }
@@ -367,6 +377,7 @@ app.layout = html.Div([
                         ],
                         'layout': {
                             'title': 'KMeans: Elbow Plot',
+                            'height': 600,
                             'xaxis' : dict(
                                 title='Clusters',
                                 titlefont=dict(
@@ -384,7 +395,8 @@ app.layout = html.Div([
                         }
                     }
                 )
-                ], className= 'five columns'
+                ], className= 'five columns',
+                    style={'display': 'inline-block', 'width': '49%'}
                 ),
 
                 html.Div([
@@ -412,6 +424,7 @@ app.layout = html.Div([
                             },
                         ],
                         'layout': {
+                            'height': 600,
                             'title': 'KMeans: Geospatial Analysis<br>Color = Learned KMeans Labels. Size = School Estimated Income.</br>',
                             "autosize" : True,
                             "hovermode": "closest",
@@ -430,7 +443,8 @@ app.layout = html.Div([
                         }
                     }
                 )
-                ], className= 'seven columns'
+                ], className= 'seven columns',
+                    style={'display': 'inline-block', 'width': '49%'}
                 )
         ]),
      html.Div([
@@ -445,6 +459,7 @@ app.layout = html.Div([
                             )
                         ],
                         'layout': go.Layout(
+                            height=600,
                             title = "KMeans Learned Labels:<br>Distribution of NY Educational Infrastructure</br>",
                             xaxis = {
                                 'title':'Cluster/Economic Need'
@@ -483,10 +498,11 @@ app.layout = html.Div([
                             )
                         ],
                         'layout': go.Layout(
+                            height=545,
                             title= "KMeans: Economic Need Index vs. School Income Estimate",
                             xaxis={'title': 'Economic Need Index'},
                             yaxis={'title': 'School Income Estimate'},
-                            margin={'l': 40, 'b': 40, 't': 10, 'r': 10},
+                            margin={'l': 40, 'b': 40, 't': 30, 'r': 10},
                             legend={'x': 0, 'y': 1},
                             hovermode='closest'
                         )
